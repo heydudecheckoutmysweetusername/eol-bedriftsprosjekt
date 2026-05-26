@@ -4,6 +4,7 @@ import TrustedBy from "./components/trusted-by";
 import ButtonPair from "./components/button-pair";
 import Faq from "./components/faq";
 import Footer from "./components/footer";
+import PromoVideo from "./components/promo-video";
 
 function LandingPage() {
   return (
@@ -28,7 +29,7 @@ function LandingPage() {
                 <div className="mt-6 flex items-center gap-3">
                   <div className="h-px w-8 bg-accent" />
                   <span className="text-xs font-medium uppercase tracking-[0.12em] text-accent-deep">
-                    Since 2019
+                    Established 2026
                   </span>
                 </div>
               </div>
@@ -60,7 +61,7 @@ function LandingPage() {
                 Selected work
               </h2>
               <span className="hidden text-xs font-medium uppercase tracking-[0.12em] text-text-muted md:inline">
-                2024—2026
+                2026
               </span>
             </div>
             <Carousel />
@@ -97,6 +98,10 @@ function LandingPage() {
             <Faq />
           </div>
         </section>
+
+        <div className="mx-6 mt-[clamp(3rem,6vw,5rem)] h-px bg-rule md:mx-12" />
+
+        <PromoVideo />
       </main>
       <Footer />
     </div>

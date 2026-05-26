@@ -5,7 +5,7 @@ import Header from "./header";
 describe("Header", () => {
   it("renders the logo text", () => {
     render(<Header />);
-    expect(screen.getByText("EOL")).toBeInTheDocument();
+    expect(screen.getByText("ReOL")).toBeInTheDocument();
   });
 
   it("renders the 'Maintained software' label on desktop", () => {

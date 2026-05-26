@@ -3,7 +3,7 @@ import LandingPage from "../home/main";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "EOL — Maintained Software" },
+    { title: "ReOL — Maintained Software" },
     { name: "description", content: "Software that lasts. Built for companies who value stability over hype." },
   ];
 }

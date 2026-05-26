@@ -6,3 +6,4 @@ opencode.json
 # React Router
 /.react-router/
 /build/
+.vercel

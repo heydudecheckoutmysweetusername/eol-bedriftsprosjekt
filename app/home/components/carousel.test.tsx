@@ -9,9 +9,15 @@ describe("Carousel", () => {
     expect(images.length).toBeGreaterThanOrEqual(5);
   });
 
-  it("renders slide indicators", () => {
+  it("renders three slide indicators", () => {
     render(<Carousel />);
-    const indicators = screen.getAllByRole("button", { name: /go to slide/i });
-    expect(indicators.length).toBe(5);
+    expect(screen.getAllByRole("button", { name: /go to slide/i })).toHaveLength(3);
+  });
+
+  it("exposes a horizontally scrollable track", () => {
+    render(<Carousel />);
+    const track = screen.getByRole("region", { name: /selected work slides/i });
+    expect(track.className).toMatch(/overflow-x-auto/);
+    expect(track.className).toMatch(/snap-x/);
   });
 });

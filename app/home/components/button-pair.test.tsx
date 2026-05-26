@@ -8,8 +8,9 @@ describe("ButtonPair", () => {
     expect(screen.getByText("Contact sales")).toBeInTheDocument();
   });
 
-  it("renders read more button", () => {
+  it("renders read more link that scrolls to the video", () => {
     render(<ButtonPair />);
-    expect(screen.getByText("Read more")).toBeInTheDocument();
+    const link = screen.getByRole("link", { name: "Read more" });
+    expect(link).toHaveAttribute("href", "#reklame-video");
   });
 });

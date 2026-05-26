@@ -34,6 +34,7 @@
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
   }
 
   html,
@@ -61,4 +62,17 @@
 .animate-marquee {
   animation: marquee 20s linear infinite;
   will-change: transform;
+}
+
+@media (hover: hover) {
+  .marquee-pause:hover .animate-marquee,
+  .marquee-pause:focus-within .animate-marquee {
+    animation-play-state: paused;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+  }
 }

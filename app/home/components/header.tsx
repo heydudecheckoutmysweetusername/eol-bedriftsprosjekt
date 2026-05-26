@@ -7,12 +7,13 @@ export default function Header({ onMenuToggle }: HeaderProps) {
     <header className="flex items-center justify-between px-6 py-5 md:px-12">
       <div className="flex items-baseline gap-2">
         <span className="font-display text-xl font-bold tracking-tight text-text">
-          EOL
+          ReOL
         </span>
         <span className="hidden text-xs font-medium uppercase tracking-[0.15em] text-text-muted md:inline">
           Maintained software
         </span>
       </div>
+
       <button
         onClick={onMenuToggle}
         aria-label="Toggle menu"

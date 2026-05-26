@@ -5,7 +5,7 @@ import Footer from "./footer";
 describe("Footer", () => {
   it("renders the brand name", () => {
     render(<Footer />);
-    expect(screen.getByText("EOL")).toBeInTheDocument();
+    expect(screen.getByText("ReOL")).toBeInTheDocument();
   });
 
   it("renders the location", () => {
@@ -15,6 +15,6 @@ describe("Footer", () => {
 
   it("renders the year", () => {
     render(<Footer />);
-    expect(screen.getByText("2026")).toBeInTheDocument();
+    expect(screen.getByText("© 2026–present")).toBeInTheDocument();
   });
 });

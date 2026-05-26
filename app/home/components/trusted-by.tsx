@@ -1,4 +1,8 @@
+import { useState } from "react";
+
 export default function TrustedBy() {
+  const [paused, setPaused] = useState(false);
+
   return (
     <section className="px-6 py-[clamp(2.5rem,5vw,4rem)] md:px-12">
       <div className="mx-auto max-w-6xl">
@@ -8,8 +12,23 @@ export default function TrustedBy() {
             Trusted by
           </h2>
         </div>
-        <div className="relative w-full overflow-hidden">
-          <div className="flex animate-marquee items-center gap-12">
+        <div
+          className="marquee-pause relative w-full overflow-hidden py-6"
+          onMouseEnter={() => setPaused(true)}
+          onMouseLeave={() => setPaused(false)}
+          onPointerEnter={() => setPaused(true)}
+          onPointerLeave={() => setPaused(false)}
+          onFocusCapture={() => setPaused(true)}
+          onBlurCapture={(event) => {
+            if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
+              setPaused(false);
+            }
+          }}
+        >
+          <div
+            className="flex w-max animate-marquee items-center gap-12"
+            style={{ animationPlayState: paused ? "paused" : "running" }}
+          >
             <img
               src="/images/customer-logos.svg"
               alt="Customer logos"

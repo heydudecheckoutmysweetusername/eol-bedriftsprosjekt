@@ -7,7 +7,7 @@ export default function Faq() {
           Frequently asked questions
         </h2>
       </div>
-      <div className="grid gap-0 divide-y divide-rule md:grid-cols-2 md:gap-0 md:divide-x">
+      <div className="grid gap-0 border border-rule divide-y divide-rule md:grid-cols-2 md:gap-0 md:divide-x">
         <div className="py-6 md:pr-10">
           <h3 className="font-display text-sm font-semibold text-text">
             What does maintained software mean?
@@ -29,7 +29,7 @@ export default function Faq() {
             What technologies do you use?
           </h3>
           <p className="mt-3 text-sm leading-relaxed text-text-muted">
-            Boring technology. The kind that has been stable for a decade and will be stable for another. We choose tools that outlast trends.
+            Mostly TypeScript, Postgres, and ordinary HTTP APIs, with a long track record and plenty of developers who already know them. We pick something newer only when it clearly fits your problem, not because it landed on a conference slide.
           </p>
         </div>
         <div className="py-6 md:pl-10">

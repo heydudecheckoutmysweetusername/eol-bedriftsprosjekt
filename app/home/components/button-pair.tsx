@@ -22,12 +22,12 @@ export default function ButtonPair() {
           />
         </svg>
       </button>
-      <button
-        type="button"
+      <a
+        href="#reklame-video"
         className="inline-flex items-center gap-2 bg-accent px-5 py-2.5 text-sm font-medium text-text-inverse transition-colors hover:bg-accent-deep"
       >
         Read more
-      </button>
+      </a>
     </div>
   );
 }

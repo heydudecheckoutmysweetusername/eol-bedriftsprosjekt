@@ -36,7 +36,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
         {children}
         <ScrollRestoration />
         <Scripts />
-      </body>
+      {import.meta.env.DEV ? (
+        <script src="http://localhost:8400/live.js" />
+      ) : null}
+</body>
     </html>
   );
 }
