@@ -8,9 +8,9 @@ describe("Header", () => {
     expect(screen.getByText("ReOL")).toBeInTheDocument();
   });
 
-  it("renders the 'Maintained software' pill button", () => {
+  it("does not render the maintained software pill", () => {
     render(<Header />);
-    expect(screen.getByText("Maintained software")).toBeInTheDocument();
+    expect(screen.queryByText("Maintained software")).not.toBeInTheDocument();
   });
 
   it("renders the hamburger menu button", () => {

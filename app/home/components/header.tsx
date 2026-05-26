@@ -4,41 +4,28 @@ interface HeaderProps {
 
 export default function Header({ onMenuToggle }: HeaderProps) {
   return (
-    <header className="flex items-center justify-between px-[10px] py-[2px] bg-green-light">
-      <div className="flex items-center gap-[6.71px]">
-        <div className="relative" style={{ width: 51, height: 67.11 }}>
-          <img
-            src="/images/logo-icon.svg"
-            alt=""
-            className="absolute"
-            style={{ width: 48.28, height: 63.56, left: 1.36, top: 2.65 }}
-          />
-          <img
-            src="/images/logo-image.png"
-            alt=""
-            className="absolute"
-            style={{ width: 20.13, height: 20.13, left: 15.43, top: 23.49 }}
-          />
-          <span
-            className="absolute font-logo text-logo-sm leading-none text-black"
-            style={{ left: 12.92, top: 52.3 }}
-          >
-            ReOL
-          </span>
-        </div>
+    <header className="landing-header lg:landing-header-bordered">
+      <div className="landing-logo">
+        <img src="/images/logo-icon.svg" alt="" className="landing-logo__leaf" />
+        <img
+          src="/images/logo-image.png"
+          alt=""
+          className="landing-logo__mark"
+        />
+        <span className="landing-logo__wordmark">ReOL</span>
       </div>
-      <div className="flex items-center gap-[9px]">
-        <span className="rounded-[5px] bg-green-normal px-[10px] py-[5px] font-body text-xs text-[#EBF8ED]">
-          Maintained software
-        </span>
-        <button
-          onClick={onMenuToggle}
-          aria-label="Toggle menu"
-          className="flex h-8 w-8 items-center justify-center"
-        >
-          <img src="/images/hamburger.svg" alt="" className="h-8 w-8" />
-        </button>
-      </div>
+      <button
+        type="button"
+        onClick={onMenuToggle}
+        aria-label="Toggle menu"
+        className="landing-menu-button"
+      >
+        <img
+          src="/images/hamburger.svg"
+          alt=""
+          className="landing-menu-button__icon"
+        />
+      </button>
     </header>
   );
 }
