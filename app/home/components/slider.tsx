@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const slides = [
   { src: "/images/carousel-1.png", alt: "Slide 1" },
@@ -8,11 +8,11 @@ const slides = [
   { src: "/images/carousel-5.png", alt: "Slide 5" },
 ];
 
-const SLIDE_WIDTH = 382;
-const GAP = 23;
-const STEP = SLIDE_WIDTH + GAP;
+type SliderProps = {
+  variant?: "mobile" | "desktop";
+};
 
-export default function Carousel() {
+export default function Slider({ variant = "mobile" }: SliderProps) {
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
@@ -22,18 +22,23 @@ export default function Carousel() {
     return () => clearInterval(timer);
   }, []);
 
+  const viewportClass =
+    variant === "desktop"
+      ? "landing-slider landing-slider--desktop"
+      : "landing-slider landing-slider--mobile";
+
   return (
-    <div className="mx-auto w-[382px] overflow-hidden">
+    <div className={viewportClass} data-testid="slider">
       <div
-        className="flex gap-[23px] transition-transform duration-500 ease-in-out"
-        style={{ transform: `translateX(-${current * STEP}px)` }}
+        className="landing-slider__track"
+        style={{ transform: `translateX(calc(-${current} * 100cqw))` }}
       >
         {slides.map((slide) => (
           <img
             key={slide.alt}
             src={slide.src}
             alt={slide.alt}
-            className="h-[255px] w-[382px] shrink-0 rounded-[5px] object-cover"
+            className="landing-slider__slide"
           />
         ))}
       </div>

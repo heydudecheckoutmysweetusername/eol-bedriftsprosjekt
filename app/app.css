@@ -1,57 +1,116 @@
 @import "tailwindcss";
+@import "./home/landing.css";
 
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-display: "Sora", ui-sans-serif, system-ui, sans-serif;
   --font-heading: "DM Serif Display", serif;
   --font-logo: "Special Gothic Expanded One", sans-serif;
   --font-body: "Roboto", sans-serif;
   --font-heading-condensed: "Roboto Condensed", sans-serif;
 
-  --text-xs: clamp(10px, 2.8vw, 12px);
-  --text-sm: clamp(12px, 3.2vw, 14px);
-  --text-base: clamp(14px, 3.8vw, 16px);
-  --text-heading-lg: clamp(22px, 7vw, 29px);
-  --text-logo-sm: clamp(8px, 2.3vw, 10.07px);
-  --text-section-heading: clamp(24px, 7.5vw, 26px);
+  /* Typography (rem) */
+  --text-xs: clamp(0.625rem, 0.2vw + 0.55rem, 0.75rem);
+  --text-sm: clamp(0.875rem, 0.15vw + 0.8rem, 0.875rem);
+  --text-base: clamp(0.875rem, 0.2vw + 0.8rem, 1rem);
+  --text-hero: clamp(1.375rem, 2.5vw + 0.75rem, 1.625rem);
+  --text-hero-desktop: 1.625rem;
+  --text-logo: clamp(0.629rem, 0.35vw + 0.5rem, 1.084rem);
+  --text-section-heading: clamp(1.25rem, 0.5vw + 1rem, 1.5rem);
+  --text-trusted-heading: clamp(1.5rem, 1vw + 1.1rem, 2rem);
+  --duration-marquee: 28s;
+  --marquee-strip-gap: clamp(1rem, 2.5vw, 2rem);
+  --text-footer-brand: clamp(0.875rem, 0.2vw + 0.8rem, 0.9375rem);
+  --text-meta: 0.625rem;
+  --text-since: 0.625rem;
+  --text-contact-desktop: clamp(0.875rem, 0.9vw + 0.5rem, 1.466rem);
+  --text-about-body: clamp(0.875rem, 0.85vw + 0.5rem, 1.42rem);
+  --text-about-heading: 1.75rem;
 
-  --color-green-light: #F5F9EB;
-  --color-green-normal: #39B54A;
-  --color-green-dark: #2B8838;
-  --color-green-darker: #143F1A;
-  --color-green-light-active: #C2E8C7;
-  --color-grey-300: #2A2D2A;
-  --color-font-dark: #0C0E0C;
+  /* Spacing (rem + fluid gutters for 1280–1920+) */
+  --spacing-page-x: clamp(1rem, 5.078vw, 6.25rem);
+  --spacing-page-y-hero: clamp(1.25rem, 2.734vw, 2.1875rem);
+  --spacing-section: 0.625rem;
+  --spacing-hero-gap: clamp(1rem, 7.89vw, 6.3125rem);
+  --spacing-padding-lg: 1rem;
+  --spacing-padding-sm: 0.5rem;
+  --spacing-header-x: clamp(1.25rem, 1.8vw + 0.5rem, 1.5625rem);
+  --spacing-header-x-desktop: clamp(1.25rem, 1.95vw + 0.25rem, 1.5625rem);
+  --spacing-header-y: 1rem;
+  --spacing-read-more-x: 1rem;
+  --spacing-read-more-y: 0.4375rem;
+  --spacing-footer-top: clamp(1.875rem, 2vw, 1.875rem);
+
+  /* Layout widths (rem) */
+  --width-mobile: 25.125rem;
+  --width-hero-panel: 29.5rem;
+  --width-cta: 40.1875rem;
+
+  /* Component sizes (rem) */
+  --size-header-h: 5.9375rem;
+  --size-logo-w: clamp(3.1875rem, 6.87vw, 5.493rem);
+  --size-logo-h: clamp(4.1875rem, 9.03vw, 7.228rem);
+  --size-menu-button: clamp(3.4375rem, 3.33vw, 4rem);
+  --size-menu-icon: clamp(2.6875rem, 2.6vw, 3.127rem);
+  --size-slider-w-mobile: 16.375rem;
+  --size-slider-h-mobile: 10.9375rem;
+  --size-slider-h-desktop: clamp(10.9375rem, 29.6875vw, 23.75rem);
+  --size-contact-h: clamp(2.625rem, 4.5vw, 4.375rem);
+  --size-arrow-sm: 0.8125rem;
+  --size-arrow-lg: clamp(0.8125rem, 1.1vw, 1.361rem);
+  --size-caret: clamp(1.5rem, 2vw, 2.5rem);
+  --shadow-menu-button: 0 0.25rem 0.25rem rgb(0 0 0 / 25%);
+
+  --color-green-light: #ebf8ed;
+  --color-green-normal: #39b54a;
+  --color-green-hover: #33a343;
+  --color-green-dark: #2b8838;
+  --color-green-dark-active: #1a5121;
+  --color-green-darker: #143f1a;
+  --color-green-light-active: #c2e8c7;
+  --color-grey-300: #2a2d2a;
+  --color-grey-200: #4e514e;
+  --color-grey-100: #838583;
+  --color-font-dark: #0c0e0c;
   --color-font-muted: #303230;
+  --color-eol-accent: #1f211f;
+  --color-hamburger-bg: #efefef;
+  --color-hero-panel: #ace1af;
+  --color-hero-panel-border: rgba(22, 132, 21, 0.25);
+  --color-description-inner: rgba(255, 255, 255, 0.5);
+  --color-header-border: #9e9e9e;
 }
 
 @layer base {
   html {
     font-family: var(--font-sans);
+    font-size: 100%;
   }
 
   html,
   body {
-    @apply bg-white dark:bg-gray-950;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    html {
-      color-scheme: dark;
-    }
+    @apply bg-green-light text-font-dark;
   }
 }
 
 @keyframes marquee {
-  0% {
-    transform: translateX(0);
+  from {
+    transform: translate3d(0, 0, 0);
   }
-  100% {
-    transform: translateX(-32.398%);
+  to {
+    transform: translate3d(calc(-100% / var(--marquee-copies, 2)), 0, 0);
   }
 }
 
 .animate-marquee {
-  animation: marquee 10s linear infinite;
+  animation: marquee var(--duration-marquee, 28s) linear infinite;
   will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+    transform: none;
+  }
 }

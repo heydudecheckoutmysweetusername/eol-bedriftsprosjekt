@@ -8,10 +8,12 @@ describe("TrustedBy", () => {
     expect(screen.getByText("Trusted by")).toBeInTheDocument();
   });
 
-  it("renders the customer logos image", () => {
+  it("renders the customer logos strip image", () => {
     render(<TrustedBy />);
-    const logos = screen.getAllByAltText("Customer logos");
-    expect(logos.length).toBeGreaterThanOrEqual(1);
-    expect(logos[0]).toBeInTheDocument();
+    expect(screen.getByAltText("Customer logos")).toBeInTheDocument();
+    expect(screen.getByAltText("Customer logos")).toHaveAttribute(
+      "src",
+      "/images/customer-logos.svg",
+    );
   });
 });

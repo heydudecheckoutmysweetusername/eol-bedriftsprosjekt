@@ -1,26 +1,35 @@
+import type { CSSProperties } from "react";
+
+const MARQUEE_COPIES = 2;
+
+function LogoStrip({ copyIndex }: { copyIndex: number }) {
+  return (
+    <div className="landing-trusted__strip" aria-hidden={copyIndex > 0}>
+      <img
+        src="/images/customer-logos.svg"
+        alt={copyIndex === 0 ? "Customer logos" : ""}
+        className="landing-trusted__logo-strip"
+        draggable={false}
+      />
+      <span className="landing-trusted__strip-gap" aria-hidden="true" />
+    </div>
+  );
+}
+
 export default function TrustedBy() {
   return (
-    <section className="flex flex-col items-center gap-[22px] pt-[25px]">
-      <h2 className="font-body text-section-heading font-bold text-green-dark">
+    <section className="landing-trusted lg:landing-trusted-compact">
+      <h2 className="landing-trusted__heading lg:landing-trusted-heading">
         Trusted by
       </h2>
-      <div className="relative w-full overflow-hidden">
-        <div className="flex animate-marquee items-center gap-[40px]">
-          <img
-            src="/images/customer-logos.svg"
-            alt="Customer logos"
-            className="h-[20px] w-[924px] shrink-0"
-          />
-          <img
-            src="/images/customer-logos.svg"
-            alt="Customer logos"
-            className="h-[20px] w-[924px] shrink-0"
-          />
-          <img
-            src="/images/customer-logos.svg"
-            alt="Customer logos"
-            className="h-[20px] w-[924px] shrink-0"
-          />
+      <div className="landing-trusted__logos lg:landing-trusted-logos">
+        <div
+          className="landing-trusted__marquee animate-marquee"
+          style={{ "--marquee-copies": MARQUEE_COPIES } as CSSProperties}
+        >
+          {Array.from({ length: MARQUEE_COPIES }, (_, index) => (
+            <LogoStrip key={index} copyIndex={index} />
+          ))}
         </div>
       </div>
     </section>
