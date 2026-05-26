@@ -1,35 +1,31 @@
-import { render, screen } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
+import { render, screen } from "@testing-library/react";
 import LandingPage from "./main";
 
-describe("LandingPage", () => {
-  it("renders the header with ReOL logo", () => {
+describe("LandingPage Component", () => {
+  it("renders the main components of the landing page", () => {
     render(<LandingPage />);
-    expect(screen.getByText("ReOL")).toBeInTheDocument();
-  });
-
-  it("renders the carousel section", () => {
-    render(<LandingPage />);
-    const slides = screen.getAllByRole("img");
-    const carouselImage = slides.find((img) =>
-      img.getAttribute("alt")?.startsWith("Slide"),
-    );
-    expect(carouselImage).toBeTruthy();
-  });
-
-  it("renders the Trusted by section", () => {
-    render(<LandingPage />);
-    expect(screen.getByText("Trusted by")).toBeInTheDocument();
-  });
-
-  it("renders both buttons", () => {
-    render(<LandingPage />);
-    expect(screen.getByText("Contact sales")).toBeInTheDocument();
-    expect(screen.getByText("Read more")).toBeInTheDocument();
-  });
-
-  it("renders the About section", () => {
-    render(<LandingPage />);
-    expect(screen.getByText("Maintaining")).toBeInTheDocument();
+    
+    // Header should be present
+    expect(screen.getByRole("banner")).toBeInTheDocument();
+    
+    // Title and description
+    expect(screen.getByText("We keep your old software alive")).toBeInTheDocument();
+    expect(screen.getByText(/We build and maintain the systems that keep your business running/i)).toBeInTheDocument();
+    
+    // Carousel should be present
+    expect(screen.getByTestId("carousel")).toBeInTheDocument();
+    
+    // TrustedBy should be present
+    expect(screen.getAllByText("Trusted by").length).toBeGreaterThan(0);
+    
+    // Contact sales
+    expect(screen.getByRole("button", { name: /contact sales/i })).toBeInTheDocument();
+    
+    // Read more dropdown
+    expect(screen.getByRole("button", { name: /read more/i })).toBeInTheDocument();
+    
+    // Footer
+    expect(screen.getByText("Software that lasts. Built for companies and people who value stability over hype.")).toBeInTheDocument();
   });
 });

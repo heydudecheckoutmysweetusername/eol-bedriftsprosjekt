@@ -7,6 +7,7 @@
   --font-logo: "Special Gothic Expanded One", sans-serif;
   --font-body: "Roboto", sans-serif;
   --font-heading-condensed: "Roboto Condensed", sans-serif;
+  --font-sora: "Sora", sans-serif;
 
   --text-xs: clamp(10px, 2.8vw, 12px);
   --text-sm: clamp(12px, 3.2vw, 14px);

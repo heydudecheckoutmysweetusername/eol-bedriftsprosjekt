@@ -4,7 +4,7 @@ interface HeaderProps {
 
 export default function Header({ onMenuToggle }: HeaderProps) {
   return (
-    <header className="flex items-center justify-between px-[10px] py-[2px] bg-green-light">
+    <header className="flex items-center justify-between px-[23px] py-[16px] bg-green-light">
       <div className="flex items-center gap-[6.71px]">
         <div className="relative" style={{ width: 51, height: 67.11 }}>
           <img
@@ -34,9 +34,9 @@ export default function Header({ onMenuToggle }: HeaderProps) {
         <button
           onClick={onMenuToggle}
           aria-label="Toggle menu"
-          className="flex h-8 w-8 items-center justify-center"
+          className="flex h-[55px] w-[55px] items-center justify-center rounded-[10px] bg-[#EFEFEF]"
         >
-          <img src="/images/hamburger.svg" alt="" className="h-8 w-8" />
+          <img src="/images/hamburger.svg" alt="" className="h-[43px] w-[43px]" />
         </button>
       </div>
     </header>
