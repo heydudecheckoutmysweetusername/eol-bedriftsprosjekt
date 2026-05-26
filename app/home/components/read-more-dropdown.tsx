@@ -12,18 +12,16 @@ export default function ReadMoreDropdown() {
       >
         <span className="font-body text-[14px] leading-[16.4px] text-white lg:text-[24px]">Read more</span>
         <svg
-          width="39"
-          height="39"
-          viewBox="0 0 39 39"
+          viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className={`text-white transition-transform duration-200 h-[24px] w-[24px] lg:h-[39px] lg:w-[39px] ${isOpen ? "rotate-180" : ""}`}
+          className="text-white shrink-0 h-[24px] w-[24px] lg:h-[39px] lg:w-[39px]"
           aria-hidden="true"
         >
           <path
-            d="M3.5 5.25L7 8.75L10.5 5.25"
+            d="M6 9L12 15L18 9"
             stroke="currentColor"
-            strokeWidth="1.5"
+            strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
           />
