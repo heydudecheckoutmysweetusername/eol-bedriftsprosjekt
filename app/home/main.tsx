@@ -15,7 +15,7 @@ function MenuSeparator() {
 
 export default function LandingPage() {
   return (
-    <div className="mx-auto flex min-h-screen w-full max-w-[402px] flex-col gap-[10px] bg-green-light lg:max-w-[1280px] lg:items-center">
+    <div className="mx-auto flex min-h-screen w-full max-w-[402px] flex-col gap-[10px] bg-green-light lg:max-w-[1280px] lg:items-start">
       <div className="w-full">
         <Header />
       </div>
@@ -67,7 +67,7 @@ export default function LandingPage() {
       <MenuSeparator />
 
       {/* Interactive Elements */}
-      <section className="flex w-[370px] flex-col gap-5 py-[10px] lg:w-full lg:max-w-[643px] lg:items-start lg:gap-0 lg:py-0">
+      <section className="flex w-[370px] flex-col gap-5 py-[10px] lg:w-full lg:max-w-[643px] lg:items-start lg:gap-0 lg:py-0 lg:ml-[19px]">
         <ContactSales />
         <div className="mt-[20px] w-full lg:mt-[10px]">
           <ReadMoreDropdown />
