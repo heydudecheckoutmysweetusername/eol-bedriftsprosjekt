@@ -21,7 +21,7 @@ describe("Carousel", () => {
     const outer = container.firstChild as HTMLElement;
     expect(outer.className).toContain("overflow-hidden");
     expect(outer.className).toContain("w-[262px]");
-    expect(outer.className).toContain("xl:w-[568px]");
+    expect(outer.className).toContain("lg:w-[568px]");
     expect(outer.className).toContain("mx-auto");
   });
 
@@ -32,7 +32,7 @@ describe("Carousel", () => {
       // The wrapper div has the dimensions, img has h-full w-full
       expect(img.parentElement?.className).toContain("shrink-0");
       expect(img.parentElement?.className).toContain("w-[262px]");
-      expect(img.parentElement?.className).toContain("xl:w-[568px]");
+      expect(img.parentElement?.className).toContain("lg:w-[568px]");
     });
   });
 

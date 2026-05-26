@@ -19,13 +19,13 @@ export default function Carousel() {
   }, []);
 
   return (
-    <div className="mx-auto w-[262px] xl:w-[568px] overflow-hidden" data-testid="carousel">
+    <div className="mx-auto w-[262px] lg:w-[568px] overflow-hidden" data-testid="carousel">
       <div
-        className="flex gap-[23px] transition-transform duration-500 ease-in-out max-xl:-translate-x-[calc(var(--c)*285px)] xl:-translate-x-[calc(var(--c)*591px)]"
+        className="flex gap-[23px] transition-transform duration-500 ease-in-out max-lg:-translate-x-[calc(var(--c)*285px)] lg:-translate-x-[calc(var(--c)*591px)]"
         style={{ "--c": current } as React.CSSProperties}
       >
         {slides.map((slide, i) => (
-          <div key={i} className="h-[175px] w-[262px] shrink-0 xl:h-[380px] xl:w-[568px]">
+          <div key={i} className="h-[175px] w-[262px] shrink-0 lg:h-[380px] lg:w-[568px]">
             <img src={slide.src} alt={slide.alt} className="h-full w-full object-cover rounded-[5px]" />
           </div>
         ))}

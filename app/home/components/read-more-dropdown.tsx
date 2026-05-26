@@ -8,16 +8,16 @@ export default function ReadMoreDropdown() {
       <button
         onClick={() => setIsOpen(!isOpen)}
         aria-expanded={isOpen}
-        className="flex w-full items-center justify-between bg-[#33A343] px-4 py-[7px] text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-black xl:w-[633px] xl:px-[26px] xl:py-[11px]"
+        className="flex w-full items-center justify-between bg-[#33A343] px-4 py-[7px] text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-black lg:w-[633px] lg:px-[26px] lg:py-[11px]"
       >
-        <span className="font-body text-[14px] leading-[16.4px] text-white xl:text-[24px]">Read more</span>
+        <span className="font-body text-[14px] leading-[16.4px] text-white lg:text-[24px]">Read more</span>
         <svg
           width="39"
           height="39"
           viewBox="0 0 39 39"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className={`text-white transition-transform duration-200 h-[24px] w-[24px] xl:h-[39px] xl:w-[39px] ${isOpen ? "rotate-180" : ""}`}
+          className={`text-white transition-transform duration-200 h-[24px] w-[24px] lg:h-[39px] lg:w-[39px] ${isOpen ? "rotate-180" : ""}`}
           aria-hidden="true"
         >
           <path
