@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="w-full pt-[30px] pb-[10px] px-[10px]">
+    <footer className="w-full px-[10px] pb-[10px] pt-[30px] xl:mt-[190px] xl:border-t xl:border-solid xl:border-[#838583] xl:pt-[1px]">
       <div className="flex flex-col gap-[10px]">
         <div className="flex flex-col gap-2">
           <h2 className="font-brand text-[15px] leading-tight text-black">

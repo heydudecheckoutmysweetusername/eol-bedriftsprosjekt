@@ -1,15 +1,13 @@
 export default function ContactSales() {
   return (
-    <button className="flex w-full items-center justify-between px-4 py-3 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-black">
-      <span className="font-body text-sm text-black">Contact sales</span>
+    <button className="flex w-full items-center justify-between px-[2px] py-3 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-black xl:h-[70px] xl:border-b-[1.676px] xl:border-solid xl:border-black xl:pl-[33px] xl:pr-[179px] xl:py-0">
+      <span className="font-body text-[16px] leading-[18.75px] text-black xl:text-[23.46px]">Contact sales</span>
       <svg
         data-testid="arrow-right-icon"
-        width="14"
-        height="14"
         viewBox="0 0 14 14"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="text-black"
+        className="text-black h-[14px] w-[14px] xl:h-[22px] xl:w-[22px]"
         aria-hidden="true"
       >
         <path

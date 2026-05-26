@@ -8,10 +8,6 @@ const slides = [
   { src: "/images/carousel-5.png", alt: "Slide 5" },
 ];
 
-const SLIDE_WIDTH = 382;
-const GAP = 23;
-const STEP = SLIDE_WIDTH + GAP;
-
 export default function Carousel() {
   const [current, setCurrent] = useState(0);
 
@@ -23,18 +19,15 @@ export default function Carousel() {
   }, []);
 
   return (
-    <div className="mx-auto w-[382px] overflow-hidden" data-testid="carousel">
+    <div className="mx-auto w-[262px] xl:w-[568px] overflow-hidden" data-testid="carousel">
       <div
-        className="flex gap-[23px] transition-transform duration-500 ease-in-out"
-        style={{ transform: `translateX(-${current * STEP}px)` }}
+        className="flex gap-[23px] transition-transform duration-500 ease-in-out max-xl:-translate-x-[calc(var(--c)*285px)] xl:-translate-x-[calc(var(--c)*591px)]"
+        style={{ "--c": current } as React.CSSProperties}
       >
-        {slides.map((slide) => (
-          <img
-            key={slide.alt}
-            src={slide.src}
-            alt={slide.alt}
-            className="h-[255px] w-[382px] shrink-0 rounded-[5px] object-cover"
-          />
+        {slides.map((slide, i) => (
+          <div key={i} className="h-[175px] w-[262px] shrink-0 xl:h-[380px] xl:w-[568px]">
+            <img src={slide.src} alt={slide.alt} className="h-full w-full object-cover rounded-[5px]" />
+          </div>
         ))}
       </div>
     </div>

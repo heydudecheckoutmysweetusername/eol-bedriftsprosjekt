@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import { describe, it, expect } from "vitest";
+import { describe, expect, it } from "vitest";
 import Carousel from "./carousel";
 
 describe("Carousel", () => {
@@ -11,15 +11,17 @@ describe("Carousel", () => {
 
   it("renders images with correct alt text", () => {
     render(<Carousel />);
-    expect(screen.getByAltText("Slide 1")).toBeInTheDocument();
-    expect(screen.getByAltText("Slide 5")).toBeInTheDocument();
+    const images = screen.getAllByRole("img");
+    expect(images[0]).toHaveAttribute("alt", "Slide 1");
+    expect(images[4]).toHaveAttribute("alt", "Slide 5");
   });
 
   it("shows only one centered image at a time by constraining container width", () => {
     const { container } = render(<Carousel />);
     const outer = container.firstChild as HTMLElement;
     expect(outer.className).toContain("overflow-hidden");
-    expect(outer.className).toContain("w-[382px]");
+    expect(outer.className).toContain("w-[262px]");
+    expect(outer.className).toContain("xl:w-[568px]");
     expect(outer.className).toContain("mx-auto");
   });
 
@@ -27,9 +29,10 @@ describe("Carousel", () => {
     render(<Carousel />);
     const images = screen.getAllByRole("img");
     images.forEach((img) => {
-      expect(img.className).toContain("shrink-0");
-      expect(img.className).toContain("w-[382px]");
-      expect(img.className).toContain("h-[255px]");
+      // The wrapper div has the dimensions, img has h-full w-full
+      expect(img.parentElement?.className).toContain("shrink-0");
+      expect(img.parentElement?.className).toContain("w-[262px]");
+      expect(img.parentElement?.className).toContain("xl:w-[568px]");
     });
   });
 
@@ -38,5 +41,6 @@ describe("Carousel", () => {
     const outer = container.firstChild as HTMLElement;
     const inner = outer.firstChild as HTMLElement;
     expect(inner.className).toContain("transition-transform");
+    expect(inner.className).toContain("duration-500");
   });
 });
