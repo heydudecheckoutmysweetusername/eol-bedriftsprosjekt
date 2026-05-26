@@ -15,8 +15,10 @@ function MenuSeparator() {
 
 export default function LandingPage() {
   return (
-    <div className="mx-auto flex min-h-screen w-[402px] flex-col gap-[10px] bg-green-light px-[10px] lg:w-full lg:items-center">
-      <Header />
+    <div className="mx-auto flex min-h-screen w-full max-w-[402px] flex-col gap-[10px] bg-green-light lg:max-w-[1280px] lg:items-center">
+      <div className="w-full">
+        <Header />
+      </div>
 
       <main className="flex w-full flex-col items-center lg:gap-[101px] lg:px-[65px] lg:py-[35px] lg:flex-row lg:items-start">
         {/* Left Side (Title + Description) */}
@@ -41,7 +43,7 @@ export default function LandingPage() {
         </div>
 
         {/* Carousel */}
-        <div className="mt-[20px] w-full lg:mt-0 lg:w-[568.91px] lg:shrink-0 lg:px-[10px]">
+        <div className="mt-[20px] w-full lg:mt-0 lg:w-[588.91px] lg:shrink-0 lg:px-[10px]">
           <div className="lg:border-[1.086px] lg:border-solid lg:border-[#39b54a]">
             <Carousel />
           </div>
@@ -51,11 +53,13 @@ export default function LandingPage() {
       <MenuSeparator />
 
       {/* Trusted By Section */}
-      <section className="w-full lg:flex lg:flex-col lg:items-center lg:py-[30px]">
-        <h2 className="text-center font-sora text-[24px] font-bold leading-[30.24px] text-[#2A2D2A]">
-          Trusted by
-        </h2>
-        <div className="mt-[22px]">
+      <section className="w-full lg:flex lg:flex-col lg:items-center">
+        <div className="flex h-[53px] items-center justify-center py-[30px] lg:w-[1280px]">
+          <h2 className="text-center font-sora text-[24px] font-bold leading-normal text-black">
+            Trusted by
+          </h2>
+        </div>
+        <div className="mt-[22px] lg:mt-0 lg:flex lg:h-[42px] lg:w-[1280px] lg:flex-col lg:items-start lg:justify-center">
           <TrustedBy />
         </div>
       </section>
