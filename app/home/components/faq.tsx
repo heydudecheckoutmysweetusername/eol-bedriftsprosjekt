@@ -7,8 +7,8 @@ export default function Faq() {
           Frequently asked questions
         </h2>
       </div>
-      <div className="grid gap-0 divide-y divide-rule md:grid-cols-2 md:gap-0 md:divide-x">
-        <div className="py-6 md:pr-10">
+      <div className="grid gap-0 md:grid-cols-2">
+        <div className="border-b border-rule py-6 md:border-r md:pr-10">
           <h3 className="font-display text-sm font-semibold text-text">
             What does maintained software mean?
           </h3>
@@ -16,7 +16,7 @@ export default function Faq() {
             We build systems designed to last. No planned obsolescence, no forced migrations. Your software stays functional and secure for years.
           </p>
         </div>
-        <div className="py-6 md:pl-10">
+        <div className="border-b border-rule py-6 md:pl-10">
           <h3 className="font-display text-sm font-semibold text-text">
             How is this different from agencies?
           </h3>
@@ -24,7 +24,7 @@ export default function Faq() {
             Agencies ship and leave. We stay. Long-term maintenance is the product, not an afterthought.
           </p>
         </div>
-        <div className="py-6 md:pr-10">
+        <div className="border-b border-rule py-6 md:border-r md:border-b-0 md:pr-10">
           <h3 className="font-display text-sm font-semibold text-text">
             What technologies do you use?
           </h3>
